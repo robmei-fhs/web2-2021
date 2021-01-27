@@ -6,12 +6,13 @@
         
 		:root {
 			/* Put Variables Here */
-            
+
 		}
 		* {
 			margin: 0;
 			padding: 0;
 			box-sizing: border-box;
+            font-family: 'Abel', sans-serif;
 		}
 		body {
 			background: white;
@@ -23,13 +24,12 @@
 		nav {
 			background-color: black;
 			color: white;
-            min-height: 7vh;
 		}
 		footer {
 			background-color: black;
 			color: white;
 			padding: 2vh;
-			min-height: 20vh;
+			min-height: 10vh;
 		}
 		.container {
 			background-color: beige;
@@ -38,51 +38,65 @@
 			width: 80%;
 			margin: auto;
 		}
-        .flex-container {
+        .section-header {
+            padding: 1.25rem;
+            font-size: 1.75rem;
+            border-bottom: 1px black solid;
+        }
+        .section-container {
             display: flex;
-            justify-content: center;
-            align-items: center;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: stretch;
             flex-wrap: wrap;
+            padding: 1.25rem;
         }
-        .flex-item {
-            flex-basis: 20%;
-            margin:2vh;
-        }
-        .flex-item a {
-            text-decoration: none;
-            color: black;
-        }
-        .flex-item h3 {
-           padding: 2vh;
-           background: lightgrey; 
-        }
-        .flex-item .media {
-            width:100%;
-            background: crimson;
-            padding: 1vh;   
-        }
-        .flex-item img {
-            display: block;
-            width: 100%;
-        }
-        .flex-item p {
-            font-size: 1.25rem;
-            line-height:2rem;
+        .section-item {
+            flex: 0 0 30%;
+            border: 1px lightslategrey solid;
+            border-radius: 12px;
+            box-shadow: 10px 5px 5px 0px rgba(0,0,0,0.25);
+            text-align: center;
             background: white;
-            padding:2vh;
         }
+        .section-item:hover {
+            border: 3px yellow solid;
+            box-shadow: 16px 8px 8px 0px rgba(0,0,0,0.25);
+            background: lightyellow;
+        }
+        .section-item a {
+            color: black;
+            text-decoration: none;
+        }
+        .section-icon {
+            padding: 1rem;
+        }
+        .section-icon i {
+            font-size: 20vh;
+        }
+        .section-item h4 {
+            background-color: lightgrey;
+            padding: 1rem;
+            font-size: 1.75rem;
+        }
+        .section-item p {
+            padding: 1rem;
+            font-size: 1.15rem;
+            line-height: 2rem;
+        }
+        
 
 		@media only screen and (max-width:800px) {
 			.container {
 				width: 100%;
 				margin: auto;
 			}
-            .flex-container {
-                flex-wrap: wrap;
+            .section-container {
+                flex-direction: column;
+                justify-content: center;
             }
-            .flex-item {
-                flex-basis: 100%;
-                margin:2vh;
+            .section-item {
+                flex-basis: 92%;
             }
 		}
 
@@ -92,103 +106,41 @@
 	</style>
 	<!-- Put the Link Tags Here -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-	<title>Meier's Home Page</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <title>My Page Title</title>
 
 </head>
 <body>
 	<header>
-		&nbsp;
+		header
 	</header>
 	<nav>
-		&nbsp;
+		Placeholder
 	</nav>
 	<div class="container">
-        <!-- Put assignment specific code here -->
-        
-        <h3>JavaScript 30</h3>
-        
-        <div class="flex-container">
+		<!-- Put assignment specific code here -->
+		<h3 class="section-header">Getting Started</h3>
+		<div class="section-container">
 
-            <div class="flex-item">
-                <a href="JavaScript/jsdrums/index-FINISHED.html" target="_blank">
-
-                <h3>JS Drum Kit</h3>
-                <div class="media">
-                    <img src="images/drumset.gif" alt="drum set">
+            <div class="section-item">
+            <a href="#" target="_blank">
+                <div class="section-icon">
+                    <i class="fas fa-skull-crossbones"></i>
                 </div>
+                <h4>The Skeleton</h4>
                 <p>
-                    From Web Bos's JS 30 course.
+                    The skeleton is the set of Tags 
+                    required for every HTML document.
                 </p>
-
-                </a>
-            </div>
-    
-            <div class="flex-item">
-                <a href="#" target="_blank">
-
-                
-                <h3>JS Clock</h3>
-                <div class="media">
-                    
-                </div>
-                <p>
-                    From Web Bos's JS 30 course.
-                </p>
-                
             </a>
             </div>
 
-            <div class="flex-item">
-                <a href="#" target="_blank">
 
-                
-                <h3>JS Variables</h3>
-                <div class="media">
-                    
-                </div>
-                <p>
-                    From Web Bos's JS 30 course.
-                </p>
-                
-            </a>
-            </div>
 
-            <div class="flex-item">
-                <a href="#" target="_blank">
 
-                
-                <h3>Array Cardio</h3>
-                <div class="media">
-                    
-                </div>
-                <p>
-                    From Web Bos's JS 30 course.
-                </p>
-                
-            </a>
-            </div>
-
-            <div class="flex-item">
-                <a href="#" target="_blank">
-
-                
-                <h3>Flex Panel</h3>
-                <div class="media">
-                    
-                </div>
-                <p>
-                    From Web Bos's JS 30 course.
-                </p>
-                
-            </a>
-            </div>
-    
-    
-    
-    
         </div>
-		
 		
 		
 		
