@@ -4,75 +4,84 @@
 	<!-- CSS Will go under Here in STYLE Tags -->
 	<style>
         
-		:root {
-			/* Put Variables Here */
-
-		}
-		* {
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-		}
-		body {
-			background: white;
-		}
-		header {
-			padding: 1vh;
-			text-align: center;
-		}
-		nav {
-			background-color: black;
-			color: white;
-		}
-		footer {
-			background-color: black;
-			color: white;
-			padding: 2vh;
-			min-height: 10vh;
-		}
-		.container {
-			background-color: beige;
-			padding: 1vh;
-			min-height: 60vh;
-			width: 80%;
-			margin: auto;
-		}
-
-		@media only screen and (max-width:800px) {
-			.container {
-				width: 100%;
-				margin: auto;
-			}
-		}
-
-
-
-
 	</style>
 	<!-- Put the Link Tags Here -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
+	<link type="text/css" rel="stylesheet" href="css/cardealer.css">
 	<title>Car Dealer Home</title>
 
 </head>
 <body>
 	<header>
-		header
+		Call us Anytime: <a href="tel:+15861112222">(586)111-2222</a>
 	</header>
 	<nav>
-		Placeholder
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="cars.html">Vehicles</a></li>
+			<li><a href="deals.html">Hot Deals</a></li>
+			<li><a href="team.html">Our Team</a></li>
+			<li><a href="contact.html">Contact Us</a></li>
+		</ul>
 	</nav>
-	<div class="container">
-		<!-- Put assignment specific code here -->
-		<h1>Car Dealer</h1>
+	<div class="cover-photo">
 		
-		
-		
-		
-		
-		
-		
-	</div><!-- End of the container -->
+		<div class="overlay">
+		<div class="overlay-inner">
+			<h1>Car Dealership Name</h1>
+			<p>Create a tag line</p>
+			<a class="cta-button" href="cars.html">View our Cars >></a>
+		</div><!-- End overlay Inner-->
+
+		</div><!-- End overlay-->
+				
+	</div><!-- End of the cover photo -->
+	<div class="row">
+
+		<div class="media">
+			<img src="images/carPlaceholder.png" alt="#">
+		</div>
+		<div class="text">
+			<h2>Hot Deals Waiting for you!</h2>
+			<p>
+				Create a cool paragraph
+			</p>
+			<a class="cta-button" href="deals.html">View our Deals >></a>
+		</div>
+
+	</div><!-- End of a row -->
+
+	<div class="row row-dark">
+
+		<div class="text">
+			<h2>We have the best team in town!</h2>
+			<p>
+				Create a cool paragraph
+			</p>
+			<a class="cta-button" href="team.html">Meet our Team >></a>
+		</div>
+
+		<div class="media">
+			<img src="images/carPlaceholder.png" alt="#">
+		</div>
+
+	</div><!-- End of a row -->
+
+	<div class="row">
+
+		<div class="media">
+			<img src="images/carPlaceholder.png" alt="#">
+		</div>
+		<div class="text">
+			<h2>Three Locations to serve you!</h2>
+			<p>
+				Create a cool paragraph
+			</p>
+			<a class="cta-button" href="contact.html">Come See US >></a>
+		</div>
+
+	</div><!-- End of a row -->
+
 	<footer>
 		Made in FHS Web Design
 	</footer>
