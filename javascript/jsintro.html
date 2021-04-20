@@ -1,0 +1,288 @@
+<!doctype html>
+<html>
+<head>
+	<!-- CSS Will go under Here in STYLE Tags -->
+	<style>
+        
+		:root {
+			/* Put Variables Here */
+
+		}
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		body {
+			background: white;
+		}
+		header {
+			padding: 1vh;
+			text-align: center;
+		}
+		nav {
+			background-color: black;
+			color: white;
+		}
+		footer {
+			background-color: black;
+			color: white;
+			padding: 2vh;
+			min-height: 10vh;
+		}
+		.container {
+			background-color: beige;
+			padding: 1vh;
+			min-height: 60vh;
+			width: 80%;
+			margin: auto;
+		}
+        .pageHeader {
+            text-align: center;
+            padding: 2vh;
+        }
+
+        /* Style for our cards */
+        .card-container {
+            display: flex;
+            flex-flow: row nowrap;
+            gap:1vw;
+            padding: 1vw;
+        }
+        .card-container > * {
+            width: 100%;
+            text-align: center;
+            font-size: 1.25rem;
+        }
+        .card {
+            border: 1px solid black;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .card-body {
+            min-height: 25vh;
+            background: white;
+            padding: 2vh;
+        }
+        .card-title {
+            margin: 0;
+            background:darkmagenta;
+            color: white;
+            font-size: 1.5rem;
+            padding: 2.5vh;
+        }
+        /* Button Styling */
+        .button-container {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            gap: 1vw;
+            padding: 1vw;
+            border-top: 3px black dotted;
+            margin: 5vh;
+        }
+        .button-container > * {
+            flex-basis: 33.333%;
+            max-width: 20vw;
+            font-size: 1.25rem;
+            padding: 2vh;
+            border-radius: 12px;
+        }
+        .button-container button {
+            background: darkslategrey;
+            color: white;
+        }
+        .button-container button:hover {
+            background: rgba(47, 79, 70, .7);
+            box-shadow: 7px 6px 5px 0px rgba(0,0,0,0.42);
+        }
+
+        /* Stuff for later */
+        .hidden {
+            display: none;
+        }
+        .show {
+            display: block;
+        }
+
+		@media only screen and (max-width:800px) {
+			.container {
+				width: 100%;
+				margin: auto;
+			}
+            .card-container {
+                flex-flow: column nowrap;
+            }
+		}
+
+
+
+
+	</style>
+	<!-- Put the Link Tags Here -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title>Javascript Intro</title>
+
+</head>
+<body>
+	<header>
+		header
+	</header>
+	<nav>
+		Placeholder
+	</nav>
+	<div class="container" id="container">
+		<!-- Put assignment specific code here -->
+		<h1 class="pageHeader" id="pageHeader">Intro to JavaScript</h1>
+		
+        <div class="card-container">
+            <div class="card" id="card1">
+                <div class="card-body">
+                    <p>
+                        Generic Card Text
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <h3 class="card-title">Card #1 Title</h3>
+                </div>
+            </div>
+
+            <div class="card" id="card2">
+                <div class="card-body">
+                    <p>
+                        Generic Card Text
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <h3 class="card-title">Card #2 Title</h3>
+                </div>
+            </div>
+
+            <div class="card" id="card3">
+                <div class="card-body">
+                    <p>
+                        Generic Card Text
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <h3 class="card-title">Card #3 Title</h3>
+                </div>
+            </div>
+		
+        </div>
+
+        <div class="button-container">
+            <button onclick="changeBody()">Change Body</button>
+            <button onclick="changeTitle()">Change the Title</button>
+            <button onclick="darkContainer()">Dark Container</button>
+            
+            <button onclick="changeCardBorder()">Change Card Border</button>
+            <button onclick="changeCardTitles()">Change Card Titles</button>
+            <button onclick="changeCardBody()">Change Card Body</button>
+            <button onclick="changeCard(0)">Change Card 1</button>
+            <button onclick="changeCard(1)">Change Card 2</button>
+            <button onclick="changeCard(2)">Change Card 3</button>
+
+            <button onclick="hideOneCard(0)">Hide Card 1</button>
+            <button onclick="hideOneCard(1)">Hide Card 2</button>
+            <button onclick="hideOneCard(2)">Hide Card 3</button>
+
+            <button onclick="showOneCard(0)">Show Card 1</button>
+            <button onclick="showOneCard(1)">Show Card 2</button>
+            <button onclick="showOneCard(2)">Show Card 3</button>
+
+            <button onclick="hideAllCards()">Hide All Cards</button>
+            <button onclick="showAllCards()">Show All Cards</button>
+            
+        </div>
+
+        
+		
+		
+		
+	</div><!-- End of the container -->
+
+
+    <script>
+        function changeBody() {
+            const b = document.body.style.backgroundColor = "red";
+        }
+        function changeTitle() {
+            const pt = document.getElementById("pageHeader");
+            pt.innerHTML = "I want to go to Florida";
+        }
+
+        function darkContainer() {
+            const c = document.getElementById("container");
+            const pt = document.getElementById("pageHeader");
+            c.style.backgroundColor = "black";
+            pt.style.color = "white";
+            
+        }
+
+        function changeCardBorder() {
+            const cards = document.querySelectorAll(".card");
+            cards.forEach(c => c.style.border = "7px solid red");
+
+        }
+
+        function changeCardTitles() {
+            const titles = document.querySelectorAll(".card-title");
+            titles.forEach(t => t.style.backgroundColor = "lightblue");
+            titles.forEach(t => t.innerHTML = "Is it Friday yet");
+
+        }
+
+        function changeCardBody() {
+            const cardBodies = document.querySelectorAll(".card-body");
+            cardBodies.forEach(cb => cb.style.backgroundColor = "darkgrey");
+            cardBodies.forEach(cb => cb.style.fontSize = "20px");
+            cardBodies.forEach(cb => cb.innerHTML = "Pizza");
+            cardBodies.forEach(cb => cb.style.minHeight = "50vh");
+        }
+
+        function changeCard(cardNumber) {
+            const cards = document.querySelectorAll(".card");
+            cards[cardNumber].querySelector(".card-body").style.backgroundColor = "maroon";
+            cards[cardNumber].querySelector(".card-title").style.backgroundColor = "black";
+            cards[cardNumber].querySelector(".card-body").style.color = "white";
+            cards[cardNumber].querySelector(".card-body").innerHTML = "I Changed card #" + (cardNumber+1);
+            cards[cardNumber].querySelector(".card-title").innerHTML = "#" + (cardNumber+1) + " card title";
+
+        }
+
+        function hideOneCard(cardNumber) {
+            const cards = document.querySelectorAll(".card");
+            cards[cardNumber].classList.add("hidden");
+            cards[cardNumber].classList.remove("show");
+        }
+        function showOneCard(cardNumber) {
+            const cards = document.querySelectorAll(".card");
+            cards[cardNumber].classList.remove("hidden");
+            cards[cardNumber].classList.add("show");
+        }
+        function hideAllCards() {
+            const cards = document.querySelectorAll(".card");
+            cards.forEach(c => c.classList.add("hidden"));
+            cards.forEach(c => c.classList.remove("show"));
+        }
+        function showAllCards() {
+            const cards = document.querySelectorAll(".card");
+            cards.forEach(c => c.classList.remove("hidden"));
+            cards.forEach(c => c.classList.show("show"));
+        }
+
+
+
+    </script>
+	<footer>
+		Made in FHS Web Design
+	</footer>
+
+
+
+
+<!-- Don't delete me please, but copy me...-->
+</body>
+</html>
